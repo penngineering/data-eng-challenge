@@ -26,10 +26,5 @@ models:
         description: Current tally points (goals+assists) scored by this player
         tests:
           - not_null
-      - name: time_on_ice
-        description: Total time on ice regardless of position played
-        tests:
-          - not_null
-        
 
 
