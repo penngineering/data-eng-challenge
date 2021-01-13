@@ -54,7 +54,23 @@ class NHLApi:
                     " #.. other meta ",
                     "players": {
                         $player_id: {
-                            #... player info
+                            "person": {
+                                "id": $int,
+                                "fullName": $string,
+                                #-- other info
+                                "currentTeam": {
+                                    "name": $string,
+                                    #-- other info
+                                },
+                                "stats": {
+                                    "skaterStats": {
+                                        "assists": $int,
+                                        "goals": $int,
+                                        #-- other status
+                                    }
+                                    #-- ignore "goalieStats"
+                                }
+                            }
                         },
                         #...
                     }
@@ -63,6 +79,8 @@ class NHLApi:
                     #... same as "home" 
                 }
             }
+
+            See tests/resources/boxscore.json for a real example response
         '''
         url = self._url(f'game/{game_id}/boxscore')
         return self._get(url)
@@ -104,7 +122,8 @@ class Crawler():
 	#      so here we are looking for your ability to gently massage a data set. 
         #TODO error handling
         #TODO get games for dates
-        #TODO for each game get all player stats: schedule -> date -> teams.[home|away] -> $playerId: wanted_data
+        #TODO for each game get all player stats: schedule -> date -> teams.[home|away] -> $playerId: player_object (see boxscore above)
+        #TODO ignore goalies (players with "goalieStats")
         #TODO output to S3 should be a csv that matches the schema of utils/create_games_stats 
                  
 def main():
