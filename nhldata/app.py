@@ -95,7 +95,8 @@ class NHLApi:
 
 @dataclass
 class StorageKey:
-    # TODO what propertie are needed to partition?
+    # TODO set the properties to be partitioned by so that we can efficiently access
+    # data in step2.
     gameid: str
 
     def key(self):
