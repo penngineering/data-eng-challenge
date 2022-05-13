@@ -19,21 +19,30 @@ We are looking for you to imagine this a real, running production job.  Assume t
 * **Production Readyness** -- As we're pretending this is an automated job, we want to see how and what you add to help you verify or troubleshoot a production job.  Basically, within reason, what's necessary to know this job is OK or to quickly diagnose during a failure. 
 * **Reliablility** -- Error handling and smart retrying. Notifications of some type on run status.
 
-Now this isn't to say this is 100% production code, there's _a lot_ of bad practices here around password management, data persistance, etc. Feel free to fix things that annoy you but it's not required, we're specifically looking around where the code has comments asking for you to fill in the details.
+Now this isn't to say this is 100% production code, there's _a lot_ of bad practices here around password management, data persistance, etc. Feel free to fix things that annoy you, but it's not required; we're specifically looking around where the code has comments asking for you to fill in the details.
 
 #### Prerequisites
-We use Mac OS for development so if you have one and do any kind of development on it, you're probably good.  Linux environments should work too, this was tested on an Ubuntu machine.  Windows users will need to establish a complete workflow. (Sorry)
+We use Mac OS for development so if you have one and do any kind of development on it, you're probably good.  Linux environments should work, too; this was tested on an Ubuntu machine.  Windows users will need to establish a complete workflow. (Sorry)
 * Docker -- native for linux, [Desktop](https://www.docker.com/products/docker-desktop) for Mac and windows users
 * `docker-compose` -- comes with desktop. Linux users may need an extra install. 
 * a functioning `make` -- if you don't/can't use this, the make file is just wrapping the steps necessary to run the code and should be easy to disect to run manually
 * Python 3.7+ with a virtualenv -- This example won't create the virtualenv for you, but will help you install dependencies
 
+If your machine is _not_ running Mac OS or a Linux variant, and you have some familiarity with Virtualbox, [Linux Mint](https://www.osboxes.org/linux-mint/)'s Cinnamon desktop should be very intuitive.
+Your image will need some software installed, which, using your _VM's_ terminal, can be done as such:
+```terminal
+sudo apt install git docker.io docker-compose -y
+```
+That will prompt you for your password and once properly entered, will install Git, Docker, and docker-compose.  Your preferred IDE or vanilla editor may be natively available for the VM or you can configure sharing of host files and develop on the host.
+
+If you're not familiar with Virtualbox, and as previously stated, the make targets' commands can certainly be invoked manually.
+
 #### Solution Submission
-Please don't fork this repo.  Clone it, download the zip. etc. And upload to your own repo. 
+Please don't fork this repo.  Clone it, download the zip. etc., and upload to your own repo. 
 
-Once you're done and commit your results to a VCS such as Github, Bitbucket, or Gitlab.
+Once you're done, commit your results to a VCS such as Github, Bitbucket, or Gitlab.
 
-Provide a link to your repo so that we can review the code.  If running the code requires any other steps than those listed below,instructions for running the code should be provided as well in a `README` file.
+Provide a link to your repo so that we can review the code.  If running the code requires any other steps than those listed below, instructions for running the code should be provided as well in a `README` file.
 
 
 
